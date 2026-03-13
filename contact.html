@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>İletişim</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/contact.css">
 </head>
 <body>
   
@@ -50,6 +51,70 @@
       <p>Kısa vadede okulumu bitirip yüksek lisans yapmak, uzun vadede ise küresel çapta etki yaratacak kendi Yapay Zeka (AI) şirketimi kurmak.</p>
     </details>
 
+    <hr>
+
+    <div class="contact-container">
+      <h2>Detaylı İletişim Formu</h2>
+      
+      <form action="#" method="POST">
+        
+        <div>
+          <label for="fullName">Ad Soyad:</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Örn: Asaf Karataş" required>
+        </div>
+
+        <div>
+          <label for="email">E-posta Adresi:</label>
+          <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
+        </div>
+
+        <div>
+          <label for="trackingPassword">Başvuru Takip Şifresi:</label>
+          <input type="password" id="trackingPassword" name="trackingPassword" placeholder="Şifrenizi girin">
+        </div>
+
+        <fieldset>
+          <legend>İletişim Tercihi:</legend>
+          <label><input type="radio" name="contactPref" value="email" checked> Bana e-posta ile ulaşın</label><br>
+          <label><input type="radio" name="contactPref" value="phone"> Bana telefonla ulaşın</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>İlgi Alanları / Yetenekler:</legend>
+          <label><input type="checkbox" name="skills" value="html"> HTML</label><br>
+          <label><input type="checkbox" name="skills" value="css"> CSS</label><br>
+          <label><input type="checkbox" name="skills" value="algorithm"> Algoritma</label>
+        </fieldset>
+
+        <div>
+          <label for="subject">Konu:</label>
+          <select id="subject" name="subject">
+            <option value="" disabled selected>Lütfen bir konu seçin...</option>
+            <option value="job">İş Teklifi</option>
+            <option value="question">Soru</option>
+            <option value="feedback">Geri Bildirim</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="cvFile">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
+          <input type="file" id="cvFile" name="cvFile">
+        </div>
+
+        <div>
+          <label for="message">Mesajınız:</label>
+          <textarea id="message" name="message" rows="5" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..."></textarea>
+        </div>
+
+        <div class="button-group">
+          <button type="submit">Gönder</button>
+          <button type="reset">Temizle</button>
+        </div>
+
+      </form>
+    </div>
+
+    <br>
     <p><a href="index.html">Ana sayfaya geri dön</a></p>
 
   </main>
