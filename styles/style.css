@@ -1,133 +1,90 @@
-/* Grup Seçici [Eski Kodundan Alındı] */
-h1, h3, h4, p {
-    font-family: Arial, sans-serif;
-    margin-bottom: 8px;
-}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
-/* Zorunlu Şart: Ana Kapsayıcı 100vh ve Column [cite: 9, 11] */
+/* Ana Kapsayıcı: 100vh ve Flex Column [cite: 9, 11] */
 .wrapper {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    padding: 10px;
+    gap: 8px;
+    background-color: #f4f4f4;
 }
 
-/* 1) Navbar Ayarları [cite: 13-18] */
+/* Bölüm Tasarımları  */
+header, section, footer {
+    background-color: #ededed;
+    border: 1px solid #d1d1d1;
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+/* 1) Navbar [cite: 14, 17, 18] */
 .navbar {
     height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
-    background-color: #efeff6;
-    border-bottom: 1px solid #d3d3e0;
 }
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 15px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #444;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { text-decoration: none; color: #444; font-weight: bold; }
 .nav-links a:hover { color: #8da9f2; }
 
-/* 2) Hero Bölümü [cite: 19-25] */
+/* 2) Hero [cite: 23, 24, 25] */
 .hero {
     height: 30vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: stretch; /* Görsel kutusu esnesin */
-    padding: 20px;
-    background-color: #fef4e8;
+    align-items: stretch;
 }
+.hero-content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.hero-image { flex: 1; background: #dcdcdc; margin-left: 40px; border-radius: 6px; display: flex; justify-content: center; align-items: center; }
 
-.hero-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.hero-image {
-    flex: 1;
-    background-color: #e0e0e0;
-    margin-left: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-}
-
-/* 3) Kartlar Bölümü [cite: 26-33] */
+/* 3) Kartlar [cite: 31, 32, 33] */
 .cards-section {
     height: 30vh;
     display: flex;
-    flex-wrap: wrap; /* Sığmazsa alt satıra geçiş */
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
     padding: 10px;
-    background-color: #edf5fc;
 }
-
 .card {
-    flex: 1 1 180px; /* Esnek kart genişliği */
-    background-color: white;
-    border: 1px solid #c9e0f5;
+    flex: 1 1 150px;
+    background: white;
+    border: 1px solid #ddd;
     border-radius: 6px;
-    padding: 10px;
     text-align: center;
-    font-size: 14px;
-}
-
-/* 4) Flex Grow Alanı [cite: 34-40] */
-.flex-grow-area {
-    height: 20vh;
-    display: flex;
-    align-items: stretch; /* Dikey esneme */
-    gap: 15px;
-    padding: 15px;
-}
-
-.grow-box {
-    color: white;
+    padding: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
+    justify-content: space-between;
 }
 
-.box1 { flex-grow: 1; background-color: #8da9f2; } [cite: 37]
-.box2 { flex-grow: 2; background-color: #5c7cdb; } [cite: 38]
-.box3 { flex-grow: 1; background-color: #8da9f2; } [cite: 39]
+/* 4 & 5) Flex Grow Uygulamaları [cite: 37, 38, 39, 40] */
+.grow-area {
+    height: 10vh;
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+.grow-box { display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 6px; font-size: 11px; }
 
-/* 5) Footer [cite: 41-46] */
-.main-footer {
+/* Flex-Grow Oranları (1-2-1) [cite: 53] */
+.box-1, .box-1-l { flex-grow: 1; background: #dbeafe; border: 1px solid #bfdbfe; }
+.box-2, .box-2-l { flex-grow: 2; background: #dcfce7; border: 1px solid #bbf7d0; }
+.box-3, .box-3-l { flex-grow: 1; background: #ffedd5; border: 1px solid #fed7aa; }
+
+.box-1-l, .box-2-l, .box-3-l { opacity: 0.7; }
+
+/* 6) Footer [cite: 45, 46] */
+.footer {
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #efeff6;
-    border-top: 1px solid #d3d3e0;
 }
 
-.btn, .card button {
-    padding: 6px 12px;
-    background-color: #8da9f2;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+/* Butonlar */
+.btn-main, .btn-card { background: #7ba4f4; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; width: fit-content; align-self: center; }
+.btn-s { background: #7ba4f4; color: white; border: none; padding: 3px 8px; border-radius: 3px; font-size: 10px; margin-top: 4px; }
