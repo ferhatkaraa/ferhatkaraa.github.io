@@ -3,43 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ana Sayfa</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Ferhat - Flexbox Ödevi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-    <header>
-        <div class="header-top">
-            <h1>ANA SAYFA</h1>
+
+    <div class="wrapper">
+        
+        <header class="navbar">
+            <div class="logo">LOGO</div>
             <nav>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="about.html">Hakkımda</a></li>
-                    <li><a href="interests.html">İlgi Alanlarım</a></li>
-                    <li><a href="contact.html">İletişim</a></li>
+                <ul class="nav-links">
+                    <li><a href="#">Ana Sayfa</a></li>
+                    <li><a href="#">Hakkında</a></li>
+                    <li><a href="#">Dersler</a></li>
+                    <li><a href="#">İletişim</a></li>
                 </ul>
             </nav>
-        </div>
-        <p>Geleceğin Yapay Zeka Çözümleri - Kişisel Blog. Bu site, teknoloji tutkumu ve projelerimi paylaştığım kişisel alanım.</p>
-    </header>
+        </header>
 
-    <div class="container">
-        <main class="content">
-            <h2>İçerik</h2>
-            <p>Kişisel web sayfama hoş geldin! Ben Ferhat, Marmara Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. Bu sitede teknolojiye olan tutkumu, üzerinde çalıştığım projeleri ve yazılım dünyasındaki serüvenimi paylaşıyorum.</p>
-            <p>Yapay zeka, mobil uygulama geliştirme ve modern sistem altyapıları üzerine çalışmalarıma diğer sayfalardan ulaşabilirsin. İleride kendi yapay zeka tabanlı şirketimi kurma hedefiyle adımlarımı atıyorum.</p>
-        </main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Hero Başlık</h2>
+                <p>Açıklama metni burada yer alıyor.</p>
+                <button class="btn">Buton</button>
+            </div>
+            <div class="hero-image">
+                <span>Görsel Kutusu</span>
+            </div>
+        </section>
 
-        <aside class="sidebar">
-            <h2>Yan Menü / Bilgi</h2>
-            <p>Şu anda, uzun mesafelerde verimli ve sürdürülebilir kablosuz enerji transferi üzerine yürüttüğüm TÜBİTAK 2209A projemin çalışmalarına yoğunlaşıyorum.</p>
-            <p>Bunun yanında, Figma'da tasarladığım retro mobil oyun NostApp'i Flutter ile hayata geçiriyorum. Hızlı bağlantılar: <a href="https://github.com" target="_blank">GitHub</a> | <a href="https://www.marmara.edu.tr" target="_blank">Marmara Üni</a></p>
-        </aside>
+        <section class="cards-section">
+            <div class="card"><h3>Kart 1</h3><p>Kısa açıklama</p><button>Buton</button></div>
+            <div class="card"><h3>Kart 2</h3><p>Kısa açıklama</p><button>Buton</button></div>
+            <div class="card"><h3>Kart 3</h3><p>Kısa açıklama</p><button>Buton</button></div>
+            <div class="card"><h3>Kart 4</h3><p>Kısa açıklama</p><button>Buton</button></div>
+            <div class="card"><h3>Kart 5</h3><p>Kısa açıklama</p><button>Buton</button></div>
+            <div class="card"><h3>Kart 6</h3><p>Kısa açıklama</p><button>Buton</button></div>
+        </section>
+
+        <section class="flex-grow-section">
+            <div class="box box1">1 Kutu (flex-grow: 1)</div>
+            <div class="box box2">2 Kutu (flex-grow: 2)</div>
+            <div class="box box3">3 Kutu (flex-grow: 1)</div>
+        </section>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 - Temel Flexbox Örneği - Ferhat</p>
+        </footer>
+
     </div>
-
-    <footer>
-        <p>&copy; 2026 Ferhat. Tüm hakları saklıdır.</p>
-    </footer>
 
 </body>
 </html>
