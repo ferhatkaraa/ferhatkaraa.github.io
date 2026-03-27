@@ -1,124 +1,122 @@
-
-/* 1. Grup Seçici: Ödevde en az 1 adet grup seçici istenmişti. */
-h1, h2, p {
-    font-family: Arial, sans-serif;
-    margin-bottom: 12px;
-}
-
-/* Genel Sayfa Ayarları */
-body {
-    width: 90%;
-    max-width: 1100px;
-    margin: 20px auto;
+/* Genel Sıfırlama */
+* {
+    margin: 0;
     padding: 0;
-    background-color: #fafafa;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Üst Kısım (Header) */
-header {
-    background-color: #efeff6;
-    padding: 20px;
-    border: 1px solid #d3d3e0;
-    border-radius: 6px;
-    margin-bottom: 20px;
+/* Zorunlu Şart: Ana kapsayıcı 100vh ve Flex Column [cite: 9, 11] */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
 }
 
-.header-top {
+/* 1. Navbar Ayarları [cite: 13, 15, 17, 18] */
+.navbar {
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
+    padding: 0 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
 }
 
-h1 {
-    font-size: 26px;
-    color: #333;
-    margin: 0;
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
 }
 
-/* Menü Yapısı */
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* Menüyü yatay yapmak için display: inline-block kullanımı. */
-nav ul li {
-    display: inline-block; 
-    margin-left: 10px;
-}
-
-/* 2. Hiyerarşik Seçici 1 ve Hover Efekti */
-nav ul li a {
+.nav-links a {
     text-decoration: none;
-    color: #444;
-    font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #333;
 }
 
-nav ul li a:hover {
-    background-color: #8da9f2; 
+/* 2. Hero Ayarları [cite: 19, 20, 23, 24, 25] */
+.hero {
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch; /* Görsel kutusunun esnemesi için [cite: 25] */
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-image {
+    flex: 1;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+/* 3. Kartlar Bölümü [cite: 26, 27, 28, 31, 32, 33] */
+.cards-section {
+    height: 30vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f1f3f5;
+}
+
+.card {
+    flex: 1 1 150px; /* Sığmazsa wrap yapabilmesi için esnek genişlik [cite: 28] */
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+    text-align: center;
+}
+
+/* 4. Flex Grow Uygulama [cite: 34, 35, 36, 37, 38, 39, 40] */
+.flex-grow-section {
+    height: 20vh;
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px;
+}
+
+.box {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.box1 { flex-grow: 1; background-color: #007bff; } /* Kutu1: grow 1 [cite: 37] */
+.box2 { flex-grow: 2; background-color: #28a745; } /* Kutu2: grow 2 [cite: 38] */
+.box3 { flex-grow: 1; background-color: #dc3545; } /* Kutu3: grow 1 [cite: 39] */
+
+/* 5. Footer Ayarları [cite: 41, 42, 43, 45, 46] */
+.main-footer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #343a40;
     color: white;
 }
 
-/* İçerik Alanı - Yan Yana Getirme (Flexbox ile display mantığı) */
-.container {
-    display: flex; 
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-/* Sol İçerik Kutusu */
-.content {
-    width: 50%; 
-    background-color: #fef4e8; 
-    padding: 20px;
-    border: 1px solid #f2deca; 
-    border-radius: 6px;
-}
-
-/* Sağ Yan Menü/Bilgi Kutusu */
-.sidebar {
-    width: 50%;
-    background-color: #edf5fc; 
-    padding: 20px;
-    border: 1px solid #c9e0f5;
-    border-radius: 6px;
-}
-
-/* 3. Hiyerarşik Seçici 2 ve Metin Düzenlemeleri (font-size, color, line-height, text-align özellikleri) */
-.content p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.7;
-    text-align: justify;
-}
-
-/* 4. Hiyerarşik Seçici 3 */
-.sidebar p {
-    font-size: 15px;
-    color: #444;
-    line-height: 1.6;
-    text-align: left;
-}
-
-/* Alt Kısım (Footer) */
-footer {
-    background-color: #efeff6;
-    padding: 15px;
-    text-align: center;
-    border: 1px solid #d3d3e0;
-    border-radius: 6px;
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
-    color: #666;
+/* Buton ve Küçük Tasarımlar */
+.btn, button {
+    margin-top: 10px;
+    padding: 5px 15px;
+    cursor: pointer;
 }
