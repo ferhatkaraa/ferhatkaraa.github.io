@@ -1,122 +1,133 @@
-/* Genel Sıfırlama */
+/* Grup Seçici ve Temel Fontlar */
+h1, h3, p {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin-bottom: 5px;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Zorunlu Şart: Ana kapsayıcı 100vh ve Flex Column [cite: 9, 11] */
+/* Zorunlu: Ana Kapsayıcı (Wrapper) */
 .wrapper {
     display: flex;
-    flex-direction: column;
-    height: 100vh;
+    flex-direction: column; /* Dikey yerleşim zorunlu */
+    height: 100vh; /* Sayfa yüksekliğine sığmalı */
     width: 100%;
 }
 
-/* 1. Navbar Ayarları [cite: 13, 15, 17, 18] */
+/* 1) Navbar */
 .navbar {
     height: 10vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Solda logo, sağda linkler */
     align-items: center;
-    padding: 0 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ddd;
+    padding: 0 5%;
+    background-color: #efeff6;
+    border-bottom: 1px solid #d3d3e0;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 15px;
+    gap: 20px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: #444;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-/* 2. Hero Ayarları [cite: 19, 20, 23, 24, 25] */
+.nav-links a:hover { color: #8da9f2; }
+
+/* 2) Hero Bölümü */
 .hero {
     height: 30vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Yatay dizilim */
     justify-content: space-between;
-    align-items: stretch; /* Görsel kutusunun esnemesi için [cite: 25] */
-    background-color: #ffffff;
-    padding: 20px;
+    align-items: stretch; /* Görsel kutusu esnemeli */
+    padding: 20px 5%;
+    background-color: #fef4e8;
 }
 
-.hero-content {
+.hero-text {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.hero-image {
+.hero-visual {
     flex: 1;
-    background-color: #e9ecef;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ddd;
     border-radius: 8px;
     margin-left: 20px;
 }
 
-/* 3. Kartlar Bölümü [cite: 26, 27, 28, 31, 32, 33] */
-.cards-section {
+/* 3) Kartlar Bölümü */
+.cards-container {
     height: 30vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* 6 kart sığmazsa alt satıra geçmeli */
     gap: 10px;
-    padding: 10px;
-    background-color: #f1f3f5;
+    padding: 10px 5%;
+    background-color: #edf5fc;
 }
 
 .card {
-    flex: 1 1 150px; /* Sığmazsa wrap yapabilmesi için esnek genişlik [cite: 28] */
+    flex: 1 1 150px;
     background: white;
+    border: 1px solid #c9e0f5;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #dee2e6;
     text-align: center;
+    border-radius: 6px;
 }
 
-/* 4. Flex Grow Uygulama [cite: 34, 35, 36, 37, 38, 39, 40] */
-.flex-grow-section {
+/* 4) Flex Grow Uygulama */
+.grow-box-area {
     height: 20vh;
     display: flex;
-    align-items: stretch;
-    gap: 10px;
-    padding: 10px;
+    align-items: stretch; /* Yükseklik esnemeli */
+    gap: 15px;
+    padding: 10px 5%;
 }
 
-.box {
-    color: white;
+.grow-box {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
     border-radius: 4px;
 }
 
-.box1 { flex-grow: 1; background-color: #007bff; } /* Kutu1: grow 1 [cite: 37] */
-.box2 { flex-grow: 2; background-color: #28a745; } /* Kutu2: grow 2 [cite: 38] */
-.box3 { flex-grow: 1; background-color: #dc3545; } /* Kutu3: grow 1 [cite: 39] */
+.box-1 { flex-grow: 1; background-color: #8da9f2; }
+.box-2 { flex-grow: 2; background-color: #5a7bd6; } /* Kutu2 daha geniş */
+.box-3 { flex-grow: 1; background-color: #8da9f2; }
 
-/* 5. Footer Ayarları [cite: 41, 42, 43, 45, 46] */
-.main-footer {
+/* 5) Footer */
+.footer {
     height: 10vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #343a40;
-    color: white;
+    justify-content: center; /* Yatay orta */
+    align-items: center; /* Dikey orta */
+    background-color: #efeff6;
+    border-top: 1px solid #d3d3e0;
 }
 
-/* Buton ve Küçük Tasarımlar */
-.btn, button {
-    margin-top: 10px;
-    padding: 5px 15px;
+.btn {
+    width: fit-content;
+    padding: 8px 16px;
+    background-color: #8da9f2;
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
