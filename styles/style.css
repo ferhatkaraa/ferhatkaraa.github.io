@@ -1,158 +1,211 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
+/* Mevcut wrapper yapısını resimdeki gibi tam sayfa yaptık */
 .wrapper {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    padding: 10px;
-    gap: 8px;
-    background-color: #f4f4f4;
+    min-height: 100vh;
+    padding: 0; /* Boşlukları kaldırdık, tam ekran olsun */
+    background-color: #f5f6f8;
 }
 
-header, section, footer {
-    background-color: #ededed;
-    border: 1px solid #d1d1d1;
-    border-radius: 6px;
-    padding: 10px 20px;
+/* Navbar ve Footer'ı temizledik, resme uygun minimal yaptık */
+header, footer {
+    padding: 20px 40px;
+    background: transparent;
+    border: none;
 }
 
 .navbar {
-    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.logo { font-size: 1.2rem; font-weight: bold; color: #333; }
 .nav-links { display: flex; list-style: none; gap: 20px; }
-.nav-links a { text-decoration: none; color: #444; font-weight: bold; }
-.nav-links a:hover { color: #8da9f2; }
-
-.hero {
-    height: 30vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-}
-.hero-content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
-.hero-image { flex: 1; background: #dcdcdc; margin-left: 40px; border-radius: 6px; display: flex; justify-content: center; align-items: center; }
-
-.cards-section {
-    height: 30vh;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 10px;
-}
-.card {
-    flex: 1 1 150px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    text-align: center;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.grow-area {
-    height: 10vh;
-    display: flex;
-    gap: 10px;
-    align-items: stretch;
-}
-.grow-box { display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 6px; font-size: 11px; }
-
-.box-1, .box-1-l { flex-grow: 1; background: #dbeafe; border: 1px solid #bfdbfe; }
-.box-2, .box-2-l { flex-grow: 2; background: #dcfce7; border: 1px solid #bbf7d0; }
-.box-3, .box-3-l { flex-grow: 1; background: #ffedd5; border: 1px solid #fed7aa; }
+.nav-links a { text-decoration: none; color: #555; font-size: 0.9rem; }
+.nav-links a:hover { color: #514b8a; }
 
 .footer {
-    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
 }
 
-.btn-main, .btn-card { background: #7ba4f4; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; width: fit-content; align-self: center; }
-
-/* --- POSITION ÖDEVİ ÖZEL STİLLERİ --- */
-
-.fixed-support {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #8da9f2;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    cursor: help;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-}
-.fixed-support:hover {
-    transform: scale(1.1) rotate(10deg);
+/* Ana Bölüm: Resimdeki gibi kartı ortalayan alan */
+.lab-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
 }
 
-.announcement-container {
+/* --- DUYURU KARTI TASARIMI (RESİMDEKİ GİBİ) --- */
+
+/* 2. RELATIVE KAPSAYICI */
+.announcement-card {
     position: relative;
     width: 100%;
-    max-width: 600px;
-    margin: 50px auto;
-    background: white;
-    border: 2px solid #8da9f2;
-    border-radius: 12px;
-    padding: 40px;
-    overflow: visible; /* Rozetlerin dışarı taşabilmesi için */
+    max-width: 650px;
+    padding: 100px 50px; /* Üstten ve alttan geniş boşluk (rozetler için) */
+    background: rgba(255, 255, 255, 0.7); /* Transparan beyaz arka plan */
+    backdrop-filter: blur(10px); /* Cam efekti */
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+    overflow: visible; /* Rozetler taşabilsin */
 }
 
+/* Arka plandaki degrade daireler (Resimdeki gibi) */
+.announcement-card::before, .announcement-card::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+}
+.announcement-card::before {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+    top: 50px;
+    right: -30px;
+}
+.announcement-card::after {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #fef3c7, #ffedd5);
+    bottom: -50px;
+    left: -50px;
+}
+
+.card-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.card-description {
+    color: #6a737d;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+/* 3. ABSOLUTE ÖĞELER (Rozetler ve Etiketler) */
 .badge {
     position: absolute;
-    padding: 5px 12px;
+    padding: 6px 14px;
     border-radius: 20px;
     font-size: 11px;
-    font-weight: bold;
+    font-weight: 600;
+    color: #444;
+    cursor: default; /* Etkileşim yoksa */
+}
+
+/* Resimdeki sarı-turuncu "Ücretsiz" rozeti */
+.badge-ucretsiz {
+    top: 30px;
+    left: 40px;
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+/* Resimdeki mavi "24 Nisan" rozeti */
+.badge-tarih {
+    top: 30px;
+    right: 40px;
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+/* Resimdeki pembe "Son Kayıt" rozeti */
+.badge-durum {
+    bottom: -15px;
+    right: 50px;
+    background-color: #fce7f3;
+    color: #9d174d;
+    font-size: 10px;
+    animation: bounce 2s infinite; /* Keyframes Animasyon */
+}
+
+/* Resimdeki ortadaki beyaz "Konum" kutusu */
+.info-box-location {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    color: #555;
+}
+
+/* 1. FIXED ÖĞE (Resimdeki mor yardımcı menü) */
+.fixed-support-menu {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #7c3aed, #514b8a);
     color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    cursor: help; /* Hover Etkileşimi 1 */
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition */
+}
+.fixed-support-menu:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+/* Resimdeki mavi kare "Ana Sayfaya Dön" butonu */
+.back-link-btn {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(59, 130, 246, 0.3);
+    cursor: pointer; /* Hover Etkileşimi 2 */
+}
+.back-link-btn:hover { background-color: #2563eb; }
+
+/* Resimdeki gibi, kartın hover durumunda imleç değişimi */
+.announcement-card:hover {
+    cursor: crosshair; /* Hover Etkileşimi 3 */
+}
+
+/* Ana Sayfa Hero Butonu - Stil Bütünlüğü için */
+.btn-main {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
     cursor: pointer;
 }
 
-.badge-top {
-    top: 15px;
-    right: 15px;
-    background: #ff6b6b;
-    z-index: 10;
-}
-
-.badge-bottom {
-    bottom: 10px; /* Görseldeki hata burada düzeltildi */
-    left: 20px;
-    background: #51cf66;
-    animation: pulse 2s infinite;
-}
-
-.badge-corner {
-    top: -10px;
-    left: -10px;
-    background: #fcc419;
-    transform: rotate(-15deg);
-}
-
-.announcement-container:hover {
-    border-color: #444;
-    cursor: crosshair;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.back-link {
-    display: inline-block;
-    margin-top: 20px;
-    text-decoration: none;
-    color: #8da9f2;
-    font-weight: bold;
+/* Basit Animasyon (zıplama) */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
 }
