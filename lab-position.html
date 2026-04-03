@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferhat - Position Ödevi</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* Ödeve Özel Ek Stiller */
+        
+        /* 1. FIXED ÖĞE: Sayfada sabit duran yardımcı buton [cite: 9, 12, 25, 38] */
+        .fixed-support {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #8da9f2;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            cursor: help; /* Hover Etkileşimi 1  */
+            z-index: 1000;
+            transition: transform 0.3s ease; /* Etkileşim 1: Transition [cite: 13, 40] */
+        }
+        .fixed-support:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* 2. RELATIVE KAPSAYICI: Duyuru Kartı [cite: 10, 22, 36] */
+        .announcement-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            border: 2px solid #8da9f2;
+            border-radius: 12px;
+            padding: 40px;
+            overflow: hidden; /* Taşan absolute öğeleri kesmek için */
+        }
+
+        /* 3. ABSOLUTE ÖĞELER: Kart içindeki rozetler [cite: 11, 24, 37] */
+        .badge {
+            position: absolute;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer; /* Hover Etkileşimi 2  */
+        }
+
+        .badge-top {
+            top: 15px;
+            right: 15px;
+            background: #ff6b6b;
+            z-index: 10; /* Z-INDEX Kullanımı  */
+        }
+
+        .badge-bottom {
+            bottom: -10px;
+            left: 20px;
+            background: #51cf66;
+            animation: pulse 2s infinite; /* Etkileşim 2: Keyframes Animasyon [cite: 16, 40] */
+        }
+
+        .badge-corner {
+            top: -5px;
+            left: -5px;
+            background: #fcc419;
+            transform: rotate(-15deg);
+        }
+
+        /* Hover Etkileşimi 3: Kart içeriği  */
+        .announcement-container:hover {
+            border-color: #444;
+            cursor: crosshair;
+        }
+
+        /* Keyframes Animasyonu [cite: 16] */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Geri Dön Butonu */
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #8da9f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <header class="navbar">
+            <div class="logo">FERHAT | POSITION</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Ana Sayfaya Dön</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <h2 style="margin-bottom: 20px;">Etkinlik Duyurusu [cite: 21]</h2>
+
+            <div class="announcement-container">
+                <div class="badge badge-top">SON KAYIT: 24 NİSAN [cite: 50, 51]</div>
+                <div class="badge badge-bottom">ÜCRETSİZ ETKİNLİK [cite: 45]</div>
+                <div class="badge badge-corner">YENİ!</div>
+
+                <h3>Teknoloji Topluluğu Buluşması [cite: 46]</h3>
+                <p style="margin-top: 15px; line-height: 1.6;">
+                    Marmara Üniversitesi kampüsünde gerçekleştireceğimiz bu etkinlikte, 
+                    CSS Position mantığını derinlemesine inceliyoruz. [cite: 4, 47]
+                </p>
+                <p><strong>Konum:</strong> Konferans Salonu [cite: 48]</p>
+                
+                <button class="btn-main" style="margin-top: 20px;">Kayıt Ol</button>
+            </div>
+
+            <a href="index.html" class="back-link">← Ana Sayfaya Dön [cite: 44]</a>
+        </section>
+
+        <div class="fixed-support">
+            💬 [cite: 52]
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 - CSS Position Laboratuvarı - Ferhat [cite: 49]</p>
+        </footer>
+    </div>
+
+</body>
+</html>
