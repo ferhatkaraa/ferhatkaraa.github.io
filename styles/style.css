@@ -88,3 +88,88 @@ header, section, footer {
 /* Butonlar */
 .btn-main, .btn-card { background: #7ba4f4; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; width: fit-content; align-self: center; }
 .btn-s { background: #7ba4f4; color: white; border: none; padding: 3px 8px; border-radius: 3px; font-size: 10px; margin-top: 4px; }
+
+
+/* --- POSITION ÖDEVİ ÖZEL STİLLERİ --- */
+
+/* 1. FIXED ÖĞE: Sayfada sabit duran yardımcı buton */
+.fixed-support {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8da9f2;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    cursor: help;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+.fixed-support:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* 2. RELATIVE KAPSAYICI: Duyuru Kartı */
+.announcement-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    border: 2px solid #8da9f2;
+    border-radius: 12px;
+    padding: 40px;
+    overflow: hidden;
+}
+
+/* 3. ABSOLUTE ÖĞELER: Kart içindeki rozetler */
+.badge {
+    position: absolute;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.badge-top {
+    top: 15px;
+    right: 15px;
+    background: #ff6b6b;
+    z-index: 10;
+}
+
+.badge-bottom {
+    bottom: -10px;
+    left: 20px;
+    background: #51cf66;
+    animation: pulse 2s infinite;
+}
+
+.badge-corner {
+    top: -5px;
+    left: -5px;
+    background: #fcc419;
+    transform: rotate(-15deg);
+}
+
+.announcement-container:hover {
+    border-color: #444;
+    cursor: crosshair;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #8da9f2;
+    font-weight: bold;
+}
