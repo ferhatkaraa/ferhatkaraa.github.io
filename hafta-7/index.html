@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programlama - Hafta 7</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/hafta7.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">WP Lab</a>
+            <div class="navbar-nav ms-auto text-uppercase small">
+                <a class="nav-link" href="#hero">Ana Sayfa</a>
+                <a class="nav-link" href="#cards">Atolyeler</a>
+                <a class="nav-link" href="#form-section">Basvuru</a>
+                <a class="nav-link" href="#result-area">Sonuc</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="bg-white py-5 border-bottom text-start">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="badge bg-primary mb-3">Hafta 7 Laboratuvari</span>
+                    <h1 class="display-5 fw-bold mb-3">Bootstrap ve JavaScript ile Etkinlik Kayit Sayfasi</h1>
+                    <p class="text-secondary mb-4">Bu sayfada Bootstrap ile responsive bir arayuz tasarlanir; JavaScript ile tema degistirme ve form verilerinden basvuru ozeti uretme islemleri yapilir.</p>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a href="#form-section" class="btn btn-primary px-4 shadow-sm">Basvuru Formuna Git</a>
+                        <button id="themeToggle" class="btn btn-outline-secondary px-4">Koyu Temaya Gec</button>
+                    </div>
+                </div>
+                <div class="col-lg-5 mt-4 mt-lg-0">
+                    <div class="card shadow-sm p-4 border-0 rounded-4">
+                        <h5 class="fw-bold mb-3">Neler Kullanildi?</h5>
+                        <div class="mb-3 d-flex flex-wrap gap-1">
+                            <span class="badge bg-dark">Navbar</span>
+                            <span class="badge bg-primary">Grid</span>
+                            <span class="badge bg-success">Card</span>
+                            <span class="badge bg-warning text-dark">Form</span>
+                            <span class="badge bg-info text-dark">Alert</span>
+                        </div>
+                        <ul class="list-unstyled small text-secondary mb-0">
+                            <li class="border-bottom py-2">Bootstrap CDN kullanimi</li>
+                            <li class="border-bottom py-2">Responsive sutun yapisi</li>
+                            <li class="border-bottom py-2">JavaScript ile form verisi okuma</li>
+                            <li class="py-2">Tema degistirme islemi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="cards" class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Atolye Icerikleri</h2>
+            <p class="text-muted small">Bootstrap bilesenleri kullanilarak tasarlanmis ornek kartlar</p>
+        </div>
+        <div class="row g-4 text-start">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4">
+                    <div class="card-body p-4">
+                        <span class="badge bg-primary mb-3">01</span>
+                        <h5 class="fw-bold">Responsive Tasarim</h5>
+                        <p class="text-secondary small">Container, row, col yapilari ile farkli ekranlarda uyumlu gorunum olusturulur.</p>
+                        <button class="btn btn-sm btn-outline-primary" type="button">Detay</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4">
+                    <div class="card-body p-4">
+                        <span class="badge bg-success mb-3">02</span>
+                        <h5 class="fw-bold">Form Yapilari</h5>
+                        <p class="text-secondary small">Bootstrap form-control, form-select ve form-check siniflari kullanilir.</p>
+                        <button class="btn btn-sm btn-outline-success" type="button">Detay</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4">
+                    <div class="card-body p-4">
+                        <span class="badge bg-warning text-dark mb-3">03</span>
+                        <h5 class="fw-bold">JavaScript Etkilesimi</h5>
+                        <p class="text-secondary small">Form gonderildiginde ozet karti olusturulur ve tema butonu ile sayfa gorunumu degisir.</p>
+                        <button class="btn btn-sm btn-outline-warning" type="button">Detay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5 border-top border-bottom">
+        <div class="container text-start">
+            <div class="row g-4">
+                <div class="col-md-5">
+                    <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+                        <h4 class="fw-bold mb-4">Etkinlik Bilgileri</h4>
+                        <table class="table align-middle small mb-0">
+                            <tbody>
+                                <tr><td><strong>Tarih</strong></td><td class="text-end"><span class="badge bg-primary">12 Mayis</span></td></tr>
+                                <tr><td><strong>Saat</strong></td><td class="text-end"><span class="badge bg-dark">13.30</span></td></tr>
+                                <tr><td><strong>Yer</strong></td><td class="text-end"><span class="badge bg-success">Lab 205</span></td></tr>
+                                <tr><td><strong>Kontenjan</strong></td><td class="text-end"><span class="badge bg-danger">40 Kisi</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+                        <h4 class="fw-bold mb-4">Neden Katilmalisiniz?</h4>
+                        <div class="row g-3">
+                            <div class="col-sm-6"><div class="p-3 bg-primary bg-opacity-10 rounded-3 h-100"><h6 class="fw-bold small">Bootstrap pratigi</h6><p class="small text-secondary mb-0">Hazir siniflarla kisa surede profesyonel arayuz olusturmayi gorursunuz.</p></div></div>
+                            <div class="col-sm-6"><div class="p-3 bg-success bg-opacity-10 rounded-3 h-100"><h6 class="fw-bold small">JavaScript mantigi</h6><p class="small text-secondary mb-0">DOM erisimi, event listener ve kosullu yapi ornegi uygulanir.</p></div></div>
+                            <div class="col-sm-6"><div class="p-3 bg-warning bg-opacity-25 rounded-3 h-100"><h6 class="fw-bold small">Gercek senaryo</h6><p class="small text-secondary mb-0">Basit ama gercekci bir etkinlik kayit sayfasi gelistirilir.</p></div></div>
+                            <div class="col-sm-6"><div class="p-3 bg-info bg-opacity-25 rounded-3 h-100"><h6 class="fw-bold small">GitHub Pages uyumu</h6><p class="small text-secondary mb-0">Sayfa dogrudan mevcut ana sayfadan erisilebilir sekilde hazirlanir.</p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="form-section" class="container py-5">
+        <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border mx-auto text-start" style="max-width: 900px;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold mb-1">Basvuru Formu</h2>
+                    <p class="text-muted small mb-0">Formu doldurun, JavaScript otomatik olarak basvuru ozetinizi olustursun.</p>
+                </div>
+                <span class="badge bg-secondary p-2">Bootstrap Form</span>
+            </div>
+
+            <form id="registrationForm">
+                <div class="row g-3">
+                    <div class="col-md-6"><label for="name" class="form-label small fw-bold">Ad Soyad</label><input type="text" id="name" class="form-control" placeholder="Ad Soyad" required></div>
+                    <div class="col-md-6"><label for="email" class="form-label small fw-bold">E-posta</label><input type="email" id="email" class="form-control" placeholder="ornek@mail.com" required></div>
+                    <div class="col-md-6"><label for="dept" class="form-label small fw-bold">Bolum</label><input type="text" id="dept" class="form-control" required></div>
+                    <div class="col-md-6">
+                        <label for="grade" class="form-label small fw-bold">Sinif</label>
+                        <select id="grade" class="form-select" required>
+                            <option value="1">1. Sinif</option>
+                            <option value="2">2. Sinif</option>
+                            <option value="3" selected>3. Sinif</option>
+                            <option value="4">4. Sinif</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="sessionType" class="form-label small fw-bold">Katilmak Istediginiz Oturum</label>
+                        <select id="sessionType" class="form-select" required>
+                            <option value="Bootstrap + JS Projesi" selected>Bootstrap + JS Projesi</option>
+                            <option value="Arayuz Gelistirme">Arayuz Gelistirme</option>
+                            <option value="DOM ve Event Calismasi">DOM ve Event Calismasi</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="joinType" class="form-label small fw-bold">Katilim Turu</label>
+                        <select id="joinType" class="form-select" required>
+                            <option value="Yuz yuze" selected>Yuz yuze</option>
+                            <option value="Cevrim ici">Cevrim ici</option>
+                        </select>
+                    </div>
+                    <div class="col-12"><label for="msg" class="form-label small fw-bold">Kisa Mesaj</label><textarea id="msg" class="form-control" rows="3"></textarea></div>
+                    <div class="col-12">
+                        <div class="form-check small">
+                            <input class="form-check-input" type="checkbox" id="confirm" required>
+                            <label class="form-check-label" for="confirm">Bilgilerimin sadece laboratuvar uygulamasi amaciyla kullanilmasini kabul ediyorum.</label>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex gap-2 pt-3">
+                        <button type="submit" class="btn btn-primary px-4 fw-semibold">Basvuru Ozeti Olustur</button>
+                        <button type="reset" id="resetBtn" class="btn btn-outline-secondary px-4 fw-semibold">Formu Temizle</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="result-area" class="container pb-4">
+        <div id="summaryContent" class="alert alert-info py-4 text-center rounded-4 border-0 shadow-sm mb-0">
+            Henuz basvuru ozeti olusturulmadi. Formu doldurduktan sonra sonuc burada gorunecek.
+        </div>
+    </section>
+
+    <section id="applications-area" class="container pb-5">
+        <div class="bg-white p-4 rounded-4 shadow-sm border">
+            <h3 class="fw-bold mb-3">Yapilan Basvurular</h3>
+            <p class="small text-muted mb-3">Gonderilen basvurular en altta burada listelenir.</p>
+            <div id="applicationsList" class="list-group">
+                <div class="list-group-item text-muted">Henuz kayitli basvuru yok.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="mb-0 small">Web Programlama Dersi - Hafta 7 Uygulamasi</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/hafta7.js"></script>
+</body>
+</html>

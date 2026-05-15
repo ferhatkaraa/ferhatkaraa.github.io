@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Not ve Birim Dönüştürücü</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="card">
+            <h2>Öğrenci Not Hesaplama</h2>
+            <div class="form-flex">
+                <input type="text" id="adSoyad" placeholder="Ad Soyad">
+                <input type="number" id="vize" placeholder="Vize Notu">
+                <input type="number" id="final" placeholder="Final Notu">
+                <button onclick="hesaplaNot()">Hesapla</button>
+            </div>
+            <div id="sonucNot" class="sonuc-kutusu">
+                <h3 id="displayAd"></h3>
+                <p id="displayOrt"></p>
+                <p id="displayHarf"></p>
+                <p id="displayDurum"></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Birim Dönüştürücü</h2>
+            <div class="form-flex">
+                <label>Değer Giriniz:</label>
+                <input type="number" id="birimDeger" placeholder="Değer">
+                <label>Dönüşüm Tipi:</label>
+                <select id="donusumTipi">
+                    <option value="c-f">Celsius -> Fahrenheit</option>
+                    <option value="m-km">Metre -> Kilometre</option>
+                    <option value="kg-g">Kilogram -> Gram</option>
+                </select>
+                <button onclick="hesaplaBirim()" class="btn-blue">Hesapla</button>
+            </div>
+            <div id="sonucBirim" class="birim-sonuc">
+                Sonuç: <span id="displayBirim"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
