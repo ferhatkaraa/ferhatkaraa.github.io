@@ -1,0 +1,106 @@
+
+/* İletişim Formu Konteyner Ayarları */
+.contact-container {
+    width: 600px; /* Konteynıra uygun bir genişlik (width) verilmesi [cite: 14] */
+    max-width: 100%; /* Dar ekranlarda taşmayı önlemek için ekstra önlem */
+    margin: auto; /* Sayfayı ortalama [cite: 14] */
+    margin-top: 40px; 
+    margin-bottom: 40px;
+    padding: 30px; /* Elemanların kenarlara yapışmaması için geniş iç boşluk [cite: 15] */
+    border: 1px solid #d3d3e0; /* style.css ile uyumlu belirgin kenarlık [cite: 16] */
+    border-radius: 6px; /* style.css ile uyumlu hafif köşe yuvarlaması [cite: 16] */
+    background-color: #ffffff;
+    box-sizing: border-box; /* Padding ve border'ı toplam genişliğe dahil eder */
+}
+
+.contact-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Etiketleri (label) alt alta dizebilmek için blok seviyesine getiriyoruz */
+.contact-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Radyo ve Checkbox etiketlerini yatay tutmak için eziyoruz */
+fieldset label {
+    display: inline-block;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+/* Çoklu Seçici Kullanımı ile Form Elemanları [cite: 22] */
+/* Not: Sadece yazı yazılan elemanları seçtik ki radyo butonları veya checkbox'lar %100 uzamasın */
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container input[type="password"],
+.contact-container select,
+.contact-container textarea {
+    width: 100%; /* Genişliklerinin bulundukları alanın tamamını kaplaması  */
+    padding: 12px; /* İçerisine yazı yazıldığında ferah durması için padding  */
+    margin-bottom: 20px; /* Altlarındaki elemanlarla aralarına boşluk [cite: 20] */
+    border: 1px solid #c9e0f5; /* style.css'teki sidebar border rengine uyumlu */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+/* Buton Gruplaması (Flexbox ile yan yana dizme) */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Gönder Butonu Ayarları */
+.contact-container button[type="submit"] {
+    background-color: #007bff; /* Arka plan rengini değiştirme (Görseldeki gibi mavi) [cite: 21] */
+    color: white;
+    border: none; /* Kenarlığı (border) kaldırma [cite: 21] */
+    padding: 15px 30px; /* Hem sağ-sol hem de alt-üst padding değerleri vererek butonu büyütme [cite: 21] */
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 1; /* Butonların genişliği eşit paylaşması için */
+}
+
+/* Temizle Butonu Ayarları (Görseldeki gibi kırmızı) */
+.contact-container button[type="reset"] {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 1;
+}
+
+/* Hover (Üzerine Gelme) Efektleri */
+.contact-container button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.contact-container button[type="reset"]:hover {
+    background-color: #c82333;
+}
+
+/* Alan Grupları (Fieldset) Ayarları */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+fieldset legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #444;
+}
